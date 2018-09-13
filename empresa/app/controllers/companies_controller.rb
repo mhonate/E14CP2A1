@@ -10,6 +10,9 @@ class CompaniesController < ApplicationController
   # GET /companies/1
   # GET /companies/1.json
   def show
+    @employee = Employee.new
+    @employees = Employee.all
+    @area = Area.all.map { |a| [a.name, a.id]}
   end
 
   # GET /companies/new

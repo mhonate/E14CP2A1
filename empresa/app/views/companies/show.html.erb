@@ -1,9 +1,43 @@
-<p id="notice"><%= notice %></p>
+	
+	<div class="well">
+	<h3> Compañía </h3>
+ 
+	<p> <strong>Nombre :</strong>  <%= @company.name %> </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
+	</div>
+
+	<h4> Crear empleado en  <%= @company.name %>  </h4>
+
+ 		<%= render 'employees/form' %>
+
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>
+
+
+<p id="notice"><%= notice %></p>
+
+<h4>Lista de empleados</h4>
+  <div class="well"> 
+    <table class="table">
+
+     <thead class="thead-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Mail</th>
+          <th>Area</th>
+      </thead>
+
+      <tbody>
+            <% @company.employees.each do |e| %>
+            <tr>
+              <td><%= e.first_name %></td>
+              <td><%= e.las_name %></td>
+              <td><%= e.email %></td>
+              <td><%= e.area.name %></td>
+              </tr>
+              <% end %>
+               </tbody>
+    </table>
+  </div>

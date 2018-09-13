@@ -1,0 +1,30 @@
+
+<!-- form de new employee -->
+<%= form_with(model: [@company, @employee]) do |form| %>
+
+    <div class="field">
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name %>
+      </div>
+
+      <div class="field">
+        <%= form.label :las_name %>
+        <%= form.text_field :las_name %>
+      </div>
+
+      <div class="field">
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+      </div>
+
+      <div class="field">
+        <%= form.label :area %>
+        <%= form.select :area_id, @area %>
+      </div>
+
+    <div class="actions">
+        <%= form.submit %>
+      </div>
+
+<% end %>
+<!-- Fin form employee -->

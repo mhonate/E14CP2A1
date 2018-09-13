@@ -1,3 +1,5 @@
+
+<div class="well">
 <%= form_with(model: area, local: true) do |form| %>
   <% if area.errors.any? %>
     <div id="error_explanation">
@@ -12,7 +14,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label "Area" %>
     <%= form.text_field :name %>
   </div>
 
@@ -20,3 +22,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>
